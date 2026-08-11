@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Three Lions Blog — Tudo sobre a Seleção da Inglaterra</title>
-<meta name="description" content="Blog sobre a seleção da Inglaterra: história, elenco completo, jogos e curiosidades da campanha na Copa do Mundo de 2026.">
+<title>Seis minutos de fúria: a virada da Argentina sobre a Inglaterra na semifinal — Three Lions Blog</title>
+<meta name="description" content="Gordon abriu o placar em Atlanta, mas Enzo Fernández e Lautaro Martínez decidiram nos minutos finais e mandaram a Argentina à final da Copa de 2026.">
 <style>
 /* ==========================================================================
    THREE LIONS BLOG — sistema de design
@@ -181,10 +181,10 @@ nav.main-nav a.active { opacity: 1; color: var(--gold); }
 }
 .match-ticker:hover .ticker-track { animation-play-state: paused; }
 
-/* ---------- hero (bandeira da Inglaterra + arco de Wembley) ---------- */
+/* ---------- hero (estilo placar de estádio) ---------- */
 .hero {
   position: relative;
-  background: linear-gradient(155deg, #0A0E16 0%, #131B2A 45%, #0A0E16 100%);
+  background: radial-gradient(120% 140% at 15% 0%, var(--pitch) 0%, var(--pitch-2) 55%, var(--ink) 100%);
   color: var(--chalk);
   padding: 70px 0 86px;
   overflow: hidden;
@@ -195,7 +195,7 @@ nav.main-nav a.active { opacity: 1; color: var(--gold); }
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 78px);
+  background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 78px);
   z-index: -1;
 }
 
@@ -221,7 +221,7 @@ nav.main-nav a.active { opacity: 1; color: var(--gold); }
 .scoreboard {
   background: var(--ink);
   border: 1px solid var(--line-light);
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 22px 24px;
   box-shadow: 0 24px 60px -20px rgba(0,0,0,0.6);
   animation: rise 0.7s ease-out both;
@@ -235,48 +235,17 @@ nav.main-nav a.active { opacity: 1; color: var(--gold); }
   color: var(--gold);
   text-transform: uppercase;
 }
-
-/* placar estilo "resultado de pesquisa" */
-.sb-teams {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+.scoreboard .sb-score {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 16px 0 4px;
+  justify-content: space-between;
+  margin: 12px 0 6px;
+  font-family: var(--display);
+  font-size: 2.1rem;
+  color: var(--chalk);
 }
-.sb-team { text-align: center; }
-.sb-crest {
-  width: 42px; height: 42px;
-  margin: 0 auto 7px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--mono); font-weight: 700; font-size: 11px; letter-spacing: 0.02em;
-  border: 1.5px solid var(--line-light);
-  background: rgba(255,255,255,0.04);
-}
-.sb-crest.eng { border-color: var(--cross); color: var(--chalk); background: rgba(200,16,46,0.14); }
-.sb-team-name { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.72; }
-.sb-team-score { font-family: var(--display); font-size: 2.3rem; margin-top: 5px; color: rgba(250,247,242,0.55); }
-.sb-team-score.win { color: var(--chalk); }
-.sb-vs-col { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.45; padding: 0 6px; text-align: center; }
-.sb-vs-col .sb-status { display: block; color: var(--gold); font-weight: 700; margin-bottom: 2px; }
-
-.sb-detail-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  font-family: var(--mono);
-  font-size: 11px;
-  border-top: 1px dashed var(--line-light);
-  padding-top: 10px;
-  margin-top: 12px;
-}
-.sb-detail-col { display: flex; flex-direction: column; gap: 3px; }
-.sb-detail-col:last-child { text-align: right; }
-.sb-detail-label { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin-bottom: 2px; }
-.sb-detail-col span:not(.sb-detail-label) { color: rgba(250,247,242,0.85); }
-.sb-detail-col .muted { color: rgba(250,247,242,0.4); }
-
+.scoreboard .sb-score .num { color: var(--cross); }
+.scoreboard .sb-vs { font-family: var(--mono); font-size: 12px; opacity: 0.5; }
 .scoreboard .sb-meta {
   font-family: var(--mono);
   font-size: 12px;
@@ -285,11 +254,8 @@ nav.main-nav a.active { opacity: 1; color: var(--gold); }
   justify-content: space-between;
   border-top: 1px dashed var(--line-light);
   padding-top: 10px;
-  margin-top: 12px;
-  gap: 10px;
-  flex-wrap: wrap;
+  margin-top: 10px;
 }
-.hero-note { font-family: var(--mono); font-size: 11.5px; color: var(--gold); margin-top: 12px; text-align: center; }
 
 .cta-row { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
 .btn {
@@ -358,8 +324,6 @@ section { padding: 64px 0; }
 .card h3 { font-family: var(--editorial); text-transform: none; font-size: 1.2rem; font-weight: 600; padding: 12px 16px 0; letter-spacing: normal; line-height: 1.3; }
 .card p { padding: 8px 16px 18px; margin: 0; opacity: 0.8; font-size: 0.96rem; flex-grow: 1; }
 .card .card-foot { padding: 0 16px 16px; font-family: var(--mono); font-size: 11px; opacity: 0.55; }
-.card-link { text-decoration: none; color: inherit; display: block; height: 100%; }
-.card-link .card { height: 100%; }
 
 /* jogadores */
 .player-card { text-align: center; padding: 22px 14px 20px; }
@@ -506,35 +470,6 @@ footer a:hover { opacity: 1; text-decoration: underline; }
 .jersey-card.captain { border-color: var(--gold); border-width: 2px; position: relative; }
 .jersey-card.captain::before { content: "C"; position: absolute; top: 8px; right: 10px; font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold); border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; }
 
-/* foto do jogador (placeholder + imagem real) */
-.player-photo {
-  position: relative;
-  width: 100px;
-  height: 128px;
-  margin: 0 auto 10px;
-  border-radius: 14px;
-  overflow: hidden;
-  background: linear-gradient(160deg, var(--pitch) 0%, var(--pitch-2) 100%);
-  border: 2px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.player-photo .ph-initials {
-  font-family: var(--display);
-  font-size: 1.5rem;
-  letter-spacing: 0.02em;
-  color: var(--gold);
-}
-.player-photo img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-}
-
 .squad-group-head { display: flex; align-items: center; gap: 10px; margin: 44px 0 18px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cross); }
 .squad-group-head:first-child { margin-top: 0; }
 .squad-group-head svg { width: 18px; height: 18px; flex-shrink: 0; }
@@ -570,6 +505,27 @@ footer a:hover { opacity: 1; text-decoration: underline; }
 .confetti-piece { position: fixed; top: -10px; z-index: 999; pointer-events: none; border-radius: 1px; animation: confetti-fall linear forwards; }
 @keyframes confetti-fall { to { transform: translateY(105vh) rotate(540deg); opacity: 0.15; } }
 
+
+/* ---------- página de artigos (hub + artigo individual) ---------- */
+.article-wrap { display: grid; grid-template-columns: 2.1fr 1fr; gap: 44px; align-items: start; }
+@media (max-width: 880px) { .article-wrap { grid-template-columns: 1fr; } }
+.article-meta-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.article-body { font-size: 1.02rem; }
+.article-body p { margin: 0 0 20px; }
+.article-body p:last-child { margin-bottom: 0; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px; margin-bottom: 30px; }
+.article-aside { position: sticky; top: 90px; }
+.aside-box { background: var(--chalk); border: 1px solid var(--line); border-radius: 6px; padding: 20px; margin-bottom: 22px; }
+.aside-box h4 { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cross); margin: 0 0 14px; }
+.related-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.related-list li a { text-decoration: none; display: block; }
+.related-list li a .rl-tag { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cross); }
+.related-list li a .rl-title { font-family: var(--editorial); font-weight: 600; font-size: 0.94rem; line-height: 1.3; margin-top: 3px; }
+.related-list li a:hover .rl-title { text-decoration: underline; }
+.card-link { text-decoration: none; color: inherit; display: block; }
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 30px; }
+.filter-pill { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 14px; border: 1px solid var(--line); border-radius: 20px; background: var(--chalk); }
+
 </style>
 </head>
 <body>
@@ -577,7 +533,7 @@ footer a:hover { opacity: 1; text-decoration: underline; }
 <header class="site-header">
   <div class="wrap">
     <a href="index.html" class="brand">
-      <svg class="crest glow-pulse" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <svg class="crest" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M32 4 L58 14 V32 C58 46 46 56 32 60 C18 56 6 46 6 32 V14 Z" fill="#C8102E"/>
         <path d="M32 4 L58 14 V32 C58 46 46 56 32 60 C18 56 6 46 6 32 V14 Z" fill="none" stroke="#C9A24B" stroke-width="2"/>
         <path d="M20 34 q6 -14 12 0 q6 -14 12 0" fill="none" stroke="#FAF7F2" stroke-width="3" stroke-linecap="round"/>
@@ -586,321 +542,54 @@ footer a:hover { opacity: 1; text-decoration: underline; }
     </a>
     <button class="nav-toggle" aria-label="Abrir menu">MENU</button>
     <nav class="main-nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="historia.html">História</a>
+      <a href="index.html">Home</a>
+      <a href="historia.html" class="active">História</a>
       <a href="jogadores.html">Jogadores</a>
       <a href="jogos.html">Jogos</a>
-      <a href="artigos.html">Artigos</a>
+      <a href="artigos.html" class="active">Artigos</a>
       <a href="curiosidades.html">Curiosidades</a>
       <a href="curiosidades.html#quiz">Quiz</a>
     </nav>
   </div>
 </header>
 
-<div class="match-ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span><b>AMISTOSO</b> Inglaterra 1-0 Nova Zelândia</span><span class="sep">/</span>
-    <span><b>AMISTOSO</b> Inglaterra 3-0 Costa Rica</span><span class="sep">/</span>
-    <span><b>GRUPO L</b> Inglaterra 4-2 Croácia</span><span class="sep">/</span>
-    <span><b>GRUPO L</b> Panamá 0-2 Inglaterra</span><span class="sep">/</span>
-    <span><b>GRUPO L</b> Inglaterra 0-0 Gana</span><span class="sep">/</span>
-    <span><b>FASE DE 32</b> Inglaterra 2-1 RD Congo</span><span class="sep">/</span>
-    <span><b>OITAVAS</b> México 2-3 Inglaterra</span><span class="sep">/</span>
-    <span><b>QUARTAS</b> Noruega 1-2 Inglaterra (pról.)</span><span class="sep">/</span>
-    <span><b>SEMIFINAL</b> Inglaterra 1-2 Argentina</span><span class="sep">/</span>
-    <span><b>3º LUGAR</b> Inglaterra 6-4 França</span><span class="sep">/</span>
-    <span><b>AMISTOSO</b> Inglaterra 1-0 Nova Zelândia</span><span class="sep">/</span>
-    <span><b>AMISTOSO</b> Inglaterra 3-0 Costa Rica</span><span class="sep">/</span>
-    <span><b>GRUPO L</b> Inglaterra 4-2 Croácia</span><span class="sep">/</span>
-    <span><b>GRUPO L</b> Panamá 0-2 Inglaterra</span><span class="sep">/</span>
-    <span><b>GRUPO L</b> Inglaterra 0-0 Gana</span><span class="sep">/</span>
-    <span><b>FASE DE 32</b> Inglaterra 2-1 RD Congo</span><span class="sep">/</span>
-    <span><b>OITAVAS</b> México 2-3 Inglaterra</span><span class="sep">/</span>
-    <span><b>QUARTAS</b> Noruega 1-2 Inglaterra (pról.)</span><span class="sep">/</span>
-    <span><b>SEMIFINAL</b> Inglaterra 1-2 Argentina</span><span class="sep">/</span>
-    <span><b>3º LUGAR</b> Inglaterra 6-4 França</span><span class="sep">/</span>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Cobertura · 15 jul 2026 · 6 min de leitura</div>
+    <h1>Seis minutos de fúria: como a Argentina virou contra a Inglaterra</h1>
+    <p class="lede">Anthony Gordon colocou os Three Lions na frente em Atlanta e o time resistiu por quase meia hora, até a Argentina marcar duas vezes entre os 85 e os 90+2 minutos e sacramentar a virada rumo à final.</p>
   </div>
 </div>
 
-<section class="hero">
-  <div class="hero-illustration" aria-hidden="true">
-    <svg viewBox="0 0 1200 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="beamGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#FAF7F2" stop-opacity="0.22"/>
-          <stop offset="100%" stop-color="#FAF7F2" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="crossFade" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#C8102E" stop-opacity="0.5"/>
-          <stop offset="100%" stop-color="#C8102E" stop-opacity="0.12"/>
-        </linearGradient>
-      </defs>
-
-      <!-- Bandeira da Inglaterra (Cruz de São Jorge), grande e diagonal, ao fundo -->
-      <g transform="translate(760,-40) rotate(8)" opacity="0.9">
-        <rect x="0" y="0" width="480" height="330" rx="10" fill="#FAF7F2" opacity="0.05"/>
-        <rect x="185" y="0" width="110" height="330" fill="url(#crossFade)"/>
-        <rect x="0" y="118" width="480" height="94" fill="url(#crossFade)"/>
-      </g>
-
-      <!-- Escudo dos Three Lions, grande, translúcido -->
-      <g transform="translate(945,40) scale(3.1)" opacity="0.10">
-        <path d="M32 4 L58 14 V32 C58 46 46 56 32 60 C18 56 6 46 6 32 V14 Z" fill="none" stroke="#C9A24B" stroke-width="2"/>
-        <path d="M32 4 L58 14 V32 C58 46 46 56 32 60 C18 56 6 46 6 32 V14 Z" fill="#C8102E" opacity="0.15"/>
-      </g>
-
-      <!-- Arco de Wembley -->
-      <path d="M-40 300 Q 600 20 1240 300" fill="none" stroke="#FAF7F2" stroke-opacity="0.16" stroke-width="10"/>
-      <path d="M-40 300 Q 600 20 1240 300" fill="none" stroke="#C8102E" stroke-opacity="0.28" stroke-width="2.5"/>
-
-      <!-- Faixas verticais sutis lembrando arquibancada -->
-      <polygon class="beam" points="90,0 40,520 170,520" fill="url(#beamGrad)"/>
-      <polygon class="beam" points="1120,0 1010,520 1180,520" fill="url(#beamGrad)" style="animation-delay:1.2s"/>
-
-      <!-- Base / campo estilizado -->
-      <rect x="0" y="410" width="1200" height="110" fill="#0A0E16" opacity="0.55"/>
-      <path d="M0 500 Q 600 460 1200 500 L1200 520 L0 520 Z" fill="#0A0E16" opacity="0.8"/>
-      <path d="M0 500 Q 600 460 1200 500" stroke="#C8102E" stroke-opacity="0.35" stroke-width="2" fill="none"/>
-    </svg>
-  </div>
-  <div class="wrap hero-grid">
+<section>
+  <div class="wrap article-wrap">
     <div>
-      <div class="eyebrow">Copa do Mundo 2026 · Estados Unidos, México e Canadá — encerrada</div>
-      <h1>Os Three Lions terminaram em <span class="accent">3º lugar</span>.</h1>
-      <p class="lede">Depois de eliminar a Noruega na prorrogação das quartas, a Inglaterra de Thomas Tuchel sofreu uma virada dolorosa da Argentina na semifinal, mas se despediu do torneio em festa, goleando a França por 6 a 4 na disputa do terceiro lugar. A Espanha bateu a própria Argentina na final e é a campeã de 2026. Acompanhe a campanha completa, a história e o elenco dos Three Lions neste blog.</p>
-      <div class="cta-row">
-        <a href="jogos.html" class="btn btn-primary">Ver todos os jogos</a>
-        <a href="jogadores.html" class="btn btn-ghost">Conhecer o elenco</a>
+      <a href="artigos.html" class="back-link">← Voltar para Artigos</a>
+      <div class="article-meta-bar"><span class="card-tag red">Jogos</span></div>
+      <div class="article-body reveal in">
+        <p>Depois de eliminar a Noruega na prorrogação das quartas, a Inglaterra chegou à sua primeira semifinal de Copa do Mundo fora da Europa desde 1990. Pela frente, a atual campeã Argentina, em confronto disputado nesta quarta-feira (15) no Mercedes-Benz Stadium, em Atlanta — o sexto encontro mundialista entre as duas seleções, marcado pela histórica virada de 1986 e pela eliminação nos pênaltis de 1998.</p>
+        <p>O primeiro tempo foi truncado, com as duas equipes se estudando e o goleiro Jordan Pickford seguro nas poucas finalizações argentinas. O jogo se abriu logo no início do segundo tempo: aos 10 minutos (55' de jogo), Anthony Gordon apareceu para colocar a Inglaterra na frente, silenciando parte do estádio tomado por torcedores argentinos.</p>
+        <p>Com a vantagem, Thomas Tuchel optou por reforçar a defesa, colocando Ezri Konsa e Dan Burn em campo — decisão criticada pela imprensa inglesa após o apito final. A Argentina, comandada por Lionel Scaloni, identificou que a Inglaterra recuara demais e retirou o volante Leandro Paredes para ganhar mais presença ofensiva. A aposta funcionou: aos 85 minutos, Enzo Fernández arriscou de fora da área e não deu chances a Pickford, empatando a partida após uma cobrança de escanteio jogada curta por Messi.</p>
+        <p>O que veio a seguir entrou para a história do torneio. Aos 91 minutos e 28 segundos, Alexis Mac Allister acertou a trave de cabeça, e Pickford ainda respondeu bem no rebote. A bola sobrou para Messi pela direita, que cruzou para o segundo pau — e Lautaro Martínez, que havia entrado minutos antes no lugar de Nicolás Tagliafico, cabeceou para decretar a virada por 2 a 1 aos 90+2 minutos. Foi a 12ª assistência de Messi no torneio, um número inédito na história das Copas do Mundo.</p>
+        <p>"Estamos decepcionados", resumiu o vestiário inglês após o apito final, em noite de coração partido para os Three Lions, que se despediram do sonho do título mas ainda teriam a disputa do terceiro lugar para encerrar a campanha em alto nível. A Argentina, por sua vez, seguiu para sua terceira final em quatro edições, diante da Espanha, que havia batido a França na outra semifinal.</p>
       </div>
     </div>
-    <div class="scoreboard reveal">
-      <div class="sb-label">Último resultado · Disputa de 3º lugar</div>
-      <div class="sb-teams">
-        <div class="sb-team">
-          <div class="sb-crest eng">ENG</div>
-          <div class="sb-team-name">Inglaterra</div>
-          <div class="sb-team-score win">6</div>
-        </div>
-        <div class="sb-vs-col"><span class="sb-status">FIM</span>VS</div>
-        <div class="sb-team">
-          <div class="sb-crest">FRA</div>
-          <div class="sb-team-name">França</div>
-          <div class="sb-team-score">4</div>
-        </div>
+    <aside class="article-aside">
+      <div class="aside-box">
+        <h4>Leia também</h4>
+        <ul class="related-list">
+            <li><a href="artigo-quartas-noruega.html"><span class="rl-tag">Jogos</span><span class="rl-title">Bellingham decide na prorrogação e Inglaterra elimina a Noruega</span></a></li>
+            <li><a href="artigo-saka-hattrick.html"><span class="rl-tag">Jogadores</span><span class="rl-title">Hat-trick de Saka encerra a Copa da Inglaterra em festa contra a França</span></a></li>
+            <li><a href="artigo-balanco-tuchel.html"><span class="rl-tag">Análise</span><span class="rl-title">O balanço da era Tuchel: o que a Inglaterra aprendeu no 3º lugar de 2026</span></a></li>
+        </ul>
       </div>
-      <div class="sb-detail-row">
-        <div class="sb-detail-col">
-          <span class="sb-detail-label">Gols</span>
-          <span>Rice 2'</span>
-          <span>Saka 3x (1 pên.)</span>
-          <span>Bellingham 90+3'</span>
-        </div>
-        <div class="sb-detail-col">
-          <span class="sb-detail-label">Gols</span>
-          <span class="muted">Mbappé 2x</span>
-        </div>
+      <div class="aside-box" style="background:var(--ink); border-color:var(--line-light);">
+        <h4 style="color:var(--gold);">Three Lions Blog</h4>
+        <p style="color:rgba(250,247,242,0.8); font-size:0.9rem; margin:0 0 14px;">Cobertura completa da seleção da Inglaterra na Copa do Mundo de 2026.</p>
+        <a href="artigos.html" class="btn btn-primary" style="width:100%; text-align:center;">Ver todos os artigos</a>
       </div>
-      <div class="sb-detail-row" style="margin-top:6px; padding-top:8px; border-top:none;">
-        <div class="sb-detail-col">
-          <span class="sb-detail-label">Fase</span>
-          <span class="muted">3º lugar</span>
-        </div>
-        <div class="sb-detail-col">
-          <span class="sb-detail-label">Campeã 2026</span>
-          <span class="muted">Espanha (venceu a Argentina na final)</span>
-        </div>
-      </div>
-      <div class="sb-meta">
-        <span>Hard Rock Stadium, Miami (EUA)</span>
-        <span>18/07/2026</span>
-      </div>
-      <div class="hero-note">Copa do Mundo de 2026 encerrada — Inglaterra termina em 3º lugar</div>
-    </div>
-  </div>
-</section>
-
-<svg class="arch-divider" viewBox="0 0 1200 46" preserveAspectRatio="none"><path d="M0 46 C 300 -10, 900 -10, 1200 46"/></svg>
-
-<section>
-  <div class="wrap">
-    <div class="section-head"><h2>A campanha em números</h2></div>
-    <div class="stat-strip">
-      <div class="stat-cell reveal"><span class="count-up" data-target="6">0</span><span class="stat-label">Gols de Kane no torneio</span></div>
-      <div class="stat-cell reveal d2"><span class="count-up" data-target="8">0</span><span class="stat-label">Jogos disputados na Copa</span></div>
-      <div class="stat-cell reveal d3"><span class="count-up" data-target="20">0</span><span class="stat-label">Gols marcados no torneio</span></div>
-      <div class="stat-cell reveal d4"><span class="count-up" data-target="3" data-suffix="º">0</span><span class="stat-label">Lugar na Copa de 2026</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Últimas do Mundial</h2>
-      <a href="artigos.html" class="see-all">Ver todos os artigos →</a>
-    </div>
-    <div class="grid cols-3">
-      <a href="artigo-mexico-azteca.html" class="card-link">
-        <article class="card reveal">
-          <span class="card-tag red">Jogos</span>
-          <h3>Como a Inglaterra superou o México em noite dramática no Azteca</h3>
-          <p>Bellingham marcou duas vezes, Kane converteu um pênalti e os ingleses seguraram a pressão da torcida mexicana para confirmar vaga nas quartas.</p>
-          <div class="card-foot">05 jul 2026 · Oitavas de final</div>
-        </article>
-      </a>
-      <a href="artigo-kane-recorde.html" class="card-link">
-        <article class="card reveal d2">
-          <span class="card-tag gold">Recorde</span>
-          <h3>Harry Kane ultrapassa Pelé na artilharia histórica de Copas do Mundo</h3>
-          <p>Com dois gols na virada sobre a RD Congo, o capitão chegou a 13 gols em Mundiais — hoje soma 14, atrás apenas de Messi, Mbappé e Haaland nesta edição.</p>
-          <div class="card-foot">01 jul 2026 · Recordes</div>
-        </article>
-      </a>
-      <a href="artigo-tuchel-esquema.html" class="card-link">
-        <article class="card reveal d3">
-          <span class="card-tag">Análise</span>
-          <h3>O esquema de Thomas Tuchel: 100% nas Eliminatórias e Grupo L dominado</h3>
-          <p>Oito vitórias em oito jogos nas Eliminatórias europeias e liderança do Grupo L: entenda a organização tática por trás da boa fase inglesa.</p>
-          <div class="card-foot">28 jun 2026 · Táticas</div>
-        </article>
-      </a>
-      <a href="artigo-quartas-noruega.html" class="card-link">
-        <article class="card reveal">
-          <span class="card-tag red">Jogos</span>
-          <h3>Bellingham decide na prorrogação e Inglaterra elimina a Noruega</h3>
-          <p>Schjelderup abriu o placar em Miami, mas o meio-campista buscou o empate nos acréscimos e fechou a dobradinha no início do tempo extra.</p>
-          <div class="card-foot">11 jul 2026 · Jogos</div>
-        </article>
-      </a>
-      <a href="artigo-semifinal-argentina.html" class="card-link">
-        <article class="card reveal d2">
-          <span class="card-tag red">Jogos</span>
-          <h3>Seis minutos de fúria: como a Argentina virou contra a Inglaterra na semifinal</h3>
-          <p>Gordon colocou os Three Lions na frente em Atlanta, mas Enzo Fernández e Lautaro Martínez decidiram nos minutos finais e adiaram outra vez o sonho de repetir 1966.</p>
-          <div class="card-foot">15 jul 2026 · Jogos</div>
-        </article>
-      </a>
-      <a href="artigo-saka-hattrick.html" class="card-link">
-        <article class="card reveal d3">
-          <span class="card-tag gold">Jogadores</span>
-          <h3>Hat-trick de Saka encerra a Copa da Inglaterra em festa contra a França</h3>
-          <p>Com gols de Rice, Bellingham e um show do camisa 7, os Three Lions bateram a França por 6 a 4 e fecharam o Mundial de 2026 no pódio.</p>
-          <div class="card-foot">18 jul 2026 · Jogadores</div>
-        </article>
-      </a>
-      <a href="artigo-balanco-tuchel.html" class="card-link">
-        <article class="card reveal">
-          <span class="card-tag">Análise</span>
-          <h3>O balanço da era Tuchel: o que a Inglaterra aprendeu no 3º lugar de 2026</h3>
-          <p>Da campanha perfeita nas Eliminatórias ao pódio no Mundial, um raio-x da primeira grande Copa do treinador alemão à frente dos Three Lions.</p>
-          <div class="card-foot">19 jul 2026 · Análise</div>
-        </article>
-      </a>
-      <a href="artigo-bellingham-decisivo.html" class="card-link">
-        <article class="card reveal d2">
-          <span class="card-tag">Jogadores</span>
-          <h3>Jude Bellingham: a virada de chave que decidiu contra a RD Congo</h3>
-          <p>Autor de dois gols na virada sobre os congoleses, o meio-campista vive a melhor fase da carreira com a camisa da seleção.</p>
-          <div class="card-foot">30 jun 2026 · Perfil</div>
-        </article>
-      </a>
-      <a href="artigo-aniversario-1966.html" class="card-link">
-        <article class="card reveal d3">
-          <span class="card-tag gold">História</span>
-          <h3>60 anos depois, o que resta do título de 1966 na Inglaterra de hoje</h3>
-          <p>A conquista histórica em Wembley segue sendo o parâmetro de sucesso da seleção — e ainda pesa na expectativa em torno da geração atual.</p>
-          <div class="card-foot">25 jun 2026 · História</div>
-        </article>
-      </a>
-    </div>
-    <div style="text-align:center; margin-top:34px;">
-      <a href="artigos.html" class="btn btn-ghost">Ver todos os artigos</a>
-    </div>
-  </div>
-</section>
-
-<svg class="arch-divider" viewBox="0 0 1200 46" preserveAspectRatio="none"><path d="M0 0 C 300 56, 900 56, 1200 0"/></svg>
-
-<section class="on-dark">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>1966: a única estrela na camisa</h2>
-      <a href="historia.html" class="see-all">Toda a história →</a>
-    </div>
-    <div class="grid cols-2">
-      <div>
-        <p class="lede mt-0">No dia 30 de julho de 1966, em Wembley, a Inglaterra venceu a Alemanha Ocidental por 4 a 2 na prorrogação e conquistou seu único título mundial até hoje — anfitriã e campeã na mesma Copa.</p>
-        <p style="color:rgba(250,247,242,0.82);">O gol mais discutido da história das Copas — a bola de Geoff Hurst que bateu no travessão e "talvez" tenha cruzado a linha — até hoje divide opiniões entre ingleses e alemães. Sessenta anos depois, aquela geração continua sendo o parâmetro de sucesso da seleção.</p>
-        <a href="historia.html" class="btn btn-ghost" style="margin-top:14px;">Ver linha do tempo completa</a>
-      </div>
-      <div class="timeline" style="border-left-color: var(--line-light);">
-        <div class="timeline-item">
-          <div class="yr">1966</div>
-          <h3 style="color:var(--chalk)">Campeã do Mundo em casa</h3>
-          <p style="color:rgba(250,247,242,0.75)">Vitória sobre a Alemanha Ocidental por 4-2, em Wembley.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="yr">2018 / 2021</div>
-          <h3 style="color:var(--chalk)">Semifinal e final da Eurocopa</h3>
-          <p style="color:rgba(250,247,242,0.75)">Melhores campanhas recentes, ambas terminando de forma dolorosa.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="yr">2026</div>
-          <h3 style="color:var(--chalk)">Terceiro lugar nos EUA, México e Canadá</h3>
-          <p style="color:rgba(250,247,242,0.75)">Grupo L dominado, quartas superadas na prorrogação, virada dolorosa da Argentina na semifinal e um pódio conquistado com goleada sobre a França.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<svg class="arch-divider on-dark" viewBox="0 0 1200 46" preserveAspectRatio="none"><path d="M0 46 C 300 -10, 900 -10, 1200 46"/></svg>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Destaques do elenco</h2>
-      <a href="jogadores.html" class="see-all">Ver os 26 convocados →</a>
-    </div>
-    <div class="squad-grid">
-      <div class="jersey-card captain reveal">
-        <div class="player-photo"><span class="ph-initials">HK</span><img src="https://img.a.transfermarkt.technology/portrait/medium/132098-1700211169.jpg?lm=1.jpg" alt="Foto de Harry Kane" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="jname">Harry Kane</div>
-        <div class="jpos">Atacante · Capitão</div>
-        <div class="jclub">Bayern de Munique</div>
-      </div>
-      <div class="jersey-card reveal d2">
-        <div class="player-photo"><span class="ph-initials">JB</span><img src="https://img.a.transfermarkt.technology/portrait/medium/581678-1748102891.jpg?lm=1.jpg" alt="Foto de Jude Bellingham" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="jname">Jude Bellingham</div>
-        <div class="jpos">Meio-campo</div>
-        <div class="jclub">Real Madrid</div>
-      </div>
-      <div class="jersey-card reveal d3">
-        <div class="player-photo"><span class="ph-initials">BS</span><img src="https://img.a.transfermarkt.technology/portrait/medium/433177-1684155052.jpg?lm=1.jpg" alt="Foto de Bukayo Saka" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="jname">Bukayo Saka</div>
-        <div class="jpos">Atacante</div>
-        <div class="jclub">Arsenal</div>
-      </div>
-      <div class="jersey-card reveal d4">
-        <div class="player-photo"><span class="ph-initials">DR</span><img src="https://img.a.transfermarkt.technology/portrait/medium/357662-1687962936.jpg?lm=1.jpg" alt="Foto de Declan Rice" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="jname">Declan Rice</div>
-        <div class="jpos">Volante</div>
-        <div class="jclub">Arsenal</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<svg class="arch-divider" viewBox="0 0 1200 46" preserveAspectRatio="none"><path d="M0 0 C 300 56, 900 56, 1200 0"/></svg>
-
-<section class="cta-band">
-  <div class="wrap">
-    <h2>Não perca nenhum jogo dos Three Lions</h2>
-    <p>Receba resumos de partidas, análises e curiosidades direto no seu e-mail.</p>
-    <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Inscrito! ⚽';">
-      <input type="email" placeholder="seuemail@exemplo.com" required>
-      <button type="submit" class="btn btn-primary">Quero receber</button>
-    </form>
+    </aside>
   </div>
 </section>
 
