@@ -2,7 +2,7 @@
 
 :root {
   --ink:        #12151A;   /* fundo escuro / texto principal */
-  --pitch:      #16352A;   /* verde gramado noturno */
+  --pitch:      #171635;   /* verde gramado noturno */
   --pitch-2:    #0E241C;   /* verde mais escuro, gradientes */
   --cross:      #C8102E;   /* vermelho oficial St George's Cross */
   --cross-dark: #9C0C22;
@@ -10,7 +10,7 @@
   --parchment-2:#E7DEC9;
   --gold:       #C9A24B;   /* dourado de taça */
   --chalk:      #FAF7F2;   /* branco quente */
-  --line:       rgba(18,21,26,0.14);
+  --line:       rgba(18, 19, 26, 0.14);
   --line-light: rgba(250,247,242,0.18);
 
   --display: 'Anton', 'Arial Narrow', sans-serif;
